@@ -135,8 +135,14 @@ $Form.Controls.Add((generate_checkbox 'Revo Uninstaller' 'revo-uninstaller'))
 # https://community.chocolatey.org/packages/lightshot.install
 $Form.Controls.Add((generate_checkbox 'Lightshot' 'lightshot.install'))
 
-# https://community.chocolatey.org/packages/lightshot.install
+# https://community.chocolatey.org/packages/notepadplusplus
 $Form.Controls.Add((generate_checkbox 'Notepad++' 'notepadplusplus'))
+
+# https://community.chocolatey.org/packages/steelseries-engine
+$Form.Controls.Add((generate_checkbox 'SteelSeries Engine' 'steelseries-engine'))
+
+# https://community.chocolatey.org/packages/lghub
+$Form.Controls.Add((generate_checkbox 'Logitech G-HUB (pas sûr qui fonctionne)' 'lghub'))
 
 if ($global:column -ne 0) {
     $global:lastPos += $separate

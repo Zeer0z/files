@@ -14,7 +14,7 @@ if ($LASTEXITCODE -eq 0) {
     # No internet available
     Stop-Transcript
     [System.Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')
-    [System.Windows.Forms.MessageBox]::Show('Mettez en place une connexion Internet pour télécharger le programme depuis Internet.', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
+    [System.Windows.Forms.MessageBox]::Show('Mettez en place une connexion Internet pour tÃ©lÃ©charger le programme depuis Internet.', [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Error)
     Exit
 }
 
@@ -126,8 +126,11 @@ $Form.Controls.Add((generate_checkbox 'OBS Studio' 'obs-studio'))
 # https://community.chocolatey.org/packages/msiafterburner
 $Form.Controls.Add((generate_checkbox 'MSI Afterburner' 'msiafterburner'))
 
-# https://community.chocolatey.org/packages/mpc-hc
+# https://community.chocolatey.org/packages/vlc
 $Form.Controls.Add((generate_checkbox 'VLC Media Player' 'vlc'))
+
+# https://community.chocolatey.org/packages/revo-uninstaller
+$Form.Controls.Add((generate_checkbox 'Revo Uninstaller' 'revo-uninstaller'))
 
 # https://community.chocolatey.org/packages/lightshot.install
 $Form.Controls.Add((generate_checkbox 'Lightshot' 'lightshot.install'))
@@ -142,7 +145,7 @@ $lastPosWidth = $form.Width - 80 - 31
 $UpdateButton = New-Object System.Windows.Forms.Button
 $UpdateButton.Location = New-Object System.Drawing.Size($lastPosWidth, $global:lastPos)
 $UpdateButton.Size = New-Object System.Drawing.Size(80, 23)
-$UpdateButton.Text = 'Mettre à jour'
+$UpdateButton.Text = 'Mettre Ã  jour'
 $UpdateButton.Add_Click({
         $global:update = $true
         $Form.Close()

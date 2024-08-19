@@ -135,6 +135,9 @@ $Form.Controls.Add((generate_checkbox 'Revo Uninstaller' 'revo-uninstaller'))
 # https://community.chocolatey.org/packages/lightshot.install
 $Form.Controls.Add((generate_checkbox 'Lightshot' 'lightshot.install'))
 
+# https://community.chocolatey.org/packages/lightshot.install
+$Form.Controls.Add((generate_checkbox 'Notepad++' 'notepadplusplus'))
+
 if ($global:column -ne 0) {
     $global:lastPos += $separate
 }

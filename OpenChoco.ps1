@@ -142,7 +142,7 @@ $Form.Controls.Add((generate_checkbox 'Notepad++' 'notepadplusplus'))
 $Form.Controls.Add((generate_checkbox 'SteelSeries Engine' 'steelseries-engine'))
 
 # https://community.chocolatey.org/packages/lghub
-$Form.Controls.Add((generate_checkbox 'Logitech G-HUB (pas sûr qui fonctionne)' 'lghub'))
+$Form.Controls.Add((generate_checkbox 'Logitech G-HUB (pas sur qui fonctionne)' 'lghub'))
 
 if ($global:column -ne 0) {
     $global:lastPos += $separate

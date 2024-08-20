@@ -24,27 +24,6 @@ if ($LASTEXITCODE -eq 0) {
 [int] $global:lastPos = 50
 [bool]$global:install = $false
 [bool]$global:update = $false
-[bool]$global:task = $false
-
-[bool]$global:CPU_Intel = $true
-[bool]$global:CPU_AMD = $true
-[bool]$global:GPU_AMD = $true
-[bool]$global:GPU_Nvidia = $true
-
-if ((Get-Service -Name winmgmt).Status -eq 'Running') {
-    $Manufacturer = (Get-WmiObject -Query 'select Manufacturer from win32_processor').Manufacturer
-    if ($Manufacturer -eq 'AuthenticAMD') {
-        $global:CPU_Intel = $false
-    } elseif ($Manufacturer -eq 'GenuineIntel') {
-        $global:CPU_AMD = $false
-    }
-
-    $PNPDeviceID = (Get-WmiObject -Query 'select PNPDeviceID from win32_videocontroller').PNPDeviceID
-    if ($PNPDeviceID -like '*VEN_10DE&*') {
-        # Nvidia
-        $global:GPU_AMD = $false
-    }
-}
 
 function generate_checkbox {
     param(
@@ -95,9 +74,6 @@ $Label.Location = New-Object System.Drawing.Size(11, 15)
 $Label.Size = New-Object System.Drawing.Size(259, 15)
 $Label.Text = 'Voici la liste des applications disponibles :'
 $Form.Controls.Add($Label)
-
-# https://community.chocolatey.org/packages/amd-ryzen-chipset
-$Form.Controls.Add((generate_checkbox 'AMD Ryzen Chipset Drivers' 'amd-ryzen-chipset' $global:CPU_AMD))
 
 # https://community.chocolatey.org/packages/steam-client
 $Form.Controls.Add((generate_checkbox 'Steam' 'steam-client'))

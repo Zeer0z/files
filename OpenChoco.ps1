@@ -59,7 +59,7 @@ if (!(Test-Path -Path 'C:\ProgramData\chocolatey')) {
 # Set the size of your form
 $Form = New-Object System.Windows.Forms.Form
 [System.Windows.Forms.Application]::EnableVisualStyles()
-$Form.Text = 'MayhemStore' # Titlebar
+$Form.Text = 'AppStore' # Titlebar
 $Form.ShowIcon = $false
 $Form.MaximizeBox = $false
 $Form.MinimizeBox = $false
